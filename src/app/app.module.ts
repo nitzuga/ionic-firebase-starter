@@ -6,12 +6,24 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 
+/** Firebase */
+import { AngularFireModule } from 'angularfire2';
+//Auth
+import { AngularFireAuthModule } from "angularfire2/auth";
+//Cloudstore
+import { AngularFirestoreModule } from "angularfire2/firestore";
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     MyApp
   ],
   imports: [
     BrowserModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireModule.initializeApp(environment.firebase),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
