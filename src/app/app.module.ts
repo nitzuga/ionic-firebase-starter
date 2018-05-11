@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 //Cloudstore
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from '../environments/environment';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { environment } from '../environments/environment';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}
